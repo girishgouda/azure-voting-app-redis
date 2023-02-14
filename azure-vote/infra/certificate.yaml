@@ -3,6 +3,7 @@ apiVersion: cert-manager.io/v1
 kind: Issuer
 metadata:
   name: appissuer
+  namespace: cert-manager
 spec:
   acme:
    server: https://acme-v02.api.letsencrypt.org/directory
@@ -19,7 +20,7 @@ apiVersion: cert-manager.io/v1
 kind: Certificate
 metadata:
   name: appcertificate
-
+  namespace: cert-manager
 spec:
   secretName: appsecret
   commonName: gitops.vote.com
