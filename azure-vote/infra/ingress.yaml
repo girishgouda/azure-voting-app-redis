@@ -24,5 +24,5 @@ spec:
   chart:
     repository: https://kubernetes.github.io/ingress-nginx
     name: ingress-nginx
-    version: 3.33.0
+    version: "3.33.0"
   releaseName: ingress-nginx
