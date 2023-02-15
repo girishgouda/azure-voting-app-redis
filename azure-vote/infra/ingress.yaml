@@ -15,14 +15,16 @@ spec:
   interval: 24h
   url: https://kubernetes.github.io/ingress-nginx
 ---
-apiVersion: helm.toolkit.fluxcd.io/v2beta1
+apiVersion: helm.fluxcd.io/v1
 kind: HelmRelease
 metadata:
   name: ingress-nginx
   namespace: ingress-nginx
 spec:
+  releaseName: ingress-nginx
   chart:
     repository: https://kubernetes.github.io/ingress-nginx
     name: ingress-nginx
-    version: "3.33.0"
-  releaseName: ingress-nginx
+    version: 3.35.0
+  values:
+    # Add any desired values for the chart here
