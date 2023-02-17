@@ -5,5 +5,5 @@ metadata:
   name: ingress-nginx
   namespace: ingress-nginx
 spec:
-  interval: 24h
+  interval: 5m
   url: https://kubernetes.github.io/ingress-nginx
