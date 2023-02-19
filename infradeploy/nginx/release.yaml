@@ -11,7 +11,7 @@ spec:
       chart: nginx-ingress-controller
       sourceRef:
         kind: HelmRepository
-        name: bitnami
+        name: nginx
         namespace: demoapp
       version: "9.x"
   interval: 1h0m0s
