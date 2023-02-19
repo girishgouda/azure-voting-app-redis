@@ -6,10 +6,10 @@ metadata:
 spec:
   tls:
   - hosts:
-      - gitops.vote.com
+      - app.gitopsvote.com
     secretName: appsecret
   rules:
-  - host: gitops.vote.com
+  - host: app.gitopsvote.com
     http:
       paths:
       - path: /

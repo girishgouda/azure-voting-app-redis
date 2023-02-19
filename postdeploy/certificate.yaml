@@ -5,9 +5,9 @@ metadata:
   namespace: demoapp
 spec:
   secretName: appsecret
-  commonName: gitops.vote.com
+  commonName: app.gitopsvote.com
   dnsNames:
-  - gitops.vote.com
+  - app.gitopsvote.com
   issuerRef:
     name: appissuer
     kind: Issuer

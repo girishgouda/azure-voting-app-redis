@@ -13,18 +13,3 @@ spec:
    - http01:
        ingress:
          class: nginx
-
----
-apiVersion: cert-manager.io/v1 
-kind: Certificate
-metadata:
-  name: appcertificate
-  namespace: demoapp
-spec:
-  secretName: appsecret
-  commonName: gitops.vote.com
-  dnsNames:
-  - gitops.vote.com
-  issuerRef:
-    name: appissuer
-    kind: Issuer
