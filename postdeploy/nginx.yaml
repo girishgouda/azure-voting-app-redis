@@ -9,7 +9,7 @@ spec:
   #     - app.gitopsvote.com
   #   secretName: appgitopsvotesecret
   rules:
-  - host: app.gitopsvote.com
+  # - host: app.gitopsvote.com
     http:
       paths:
       - path: /
