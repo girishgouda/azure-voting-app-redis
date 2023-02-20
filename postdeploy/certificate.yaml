@@ -1,13 +1,13 @@
-# apiVersion: cert-manager.io/v1 
-# kind: Certificate
-# metadata:
-#   name: appgitopsvotecertificate
-#   namespace: demoapp
-# spec:
-#   secretName: appgitopsvotesecret
-#   commonName: app.gitopsvote.com
-#   dnsNames:
-#   - app.gitopsvote.com
-#   issuerRef:
-#     name: appgitopsvoteissuer
-#     kind: Issuer
+apiVersion: cert-manager.io/v1 
+kind: Certificate
+metadata:
+  name: appgitopsvotecertificate
+  namespace: demoapp
+spec:
+  secretName: appgitopsvotesecret
+  commonName: app.gitopsvote.com
+  dnsNames:
+  - app.gitopsvote.com
+  issuerRef:
+    name: appgitopsvoteissuer
+    kind: Issuer

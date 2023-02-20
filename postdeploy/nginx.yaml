@@ -7,8 +7,13 @@ metadata:
     nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
   ingressClassName: nginx
+  tls:
+  - hosts:
+      - app.gitopsvote.com
+    secretName: appgitopsvotesecret
   rules:
-  - http:
+  - host: app.gitopsvote.com
+    http:
       paths:
       - path: /
         pathType: Prefix

@@ -1,15 +1,15 @@
-# apiVersion: cert-manager.io/v1 
-# kind: Issuer
-# metadata:
-#   name: appgitopsvoteissuer
-#   namespace: demoapp
-# spec:
-#   acme:
-#    server: https://acme-v02.api.letsencrypt.org/directory
-#    email: girishgouda@hotmail.com
-#    privateKeySecretRef:
-#      name: letsencrypt-prod
-#    solvers:
-#    - http01:
-#        ingress:
-#          class: nginx
+apiVersion: cert-manager.io/v1 
+kind: Issuer
+metadata:
+  name: appgitopsvoteissuer
+  namespace: demoapp
+spec:
+  acme:
+   server: https://acme-v02.api.letsencrypt.org/directory
+   email: girishgouda@hotmail.com
+   privateKeySecretRef:
+     name: letsencrypt-prod
+   solvers:
+   - http01:
+       ingress:
+         class: nginx
