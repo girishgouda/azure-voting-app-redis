@@ -3,14 +3,19 @@ kind: Ingress
 metadata:
   name: sample-ingress
   namespace: demoapp
+  annotations:
+    nginx.ingress.kubernetes.io/ssl-redirect: "false"
+    nginx.ingress.kubernetes.io/rewrite-target: /static/$2
 spec:
+  ingressClassName: nginx
   rules:
   - http:
       paths:
-      - path: /
+      - path: /static(/|$)(.*)
         pathType: Prefix
         backend:
           service:
             name: azure-vote-front
-            port:
+            port: 
               number: 80
+

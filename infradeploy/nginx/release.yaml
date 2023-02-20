@@ -4,7 +4,6 @@ metadata:
   name: nginx-ingress
   namespace: demoapp
 spec:
-  releaseName: nginx-ingress
   chart:
     spec:
       chart: ingress-nginx
@@ -12,8 +11,17 @@ spec:
         kind: HelmRepository
         name: ingress-nginx
         namespace: demoapp
-      version: "3.23.0"
-  interval: 1h0m0s
   install:
     remediation:
       retries: 3
+  interval: 5m0s
+  values:
+    controller:
+      nodeSelector:
+        kubernetes.io/os: linux
+        workload_type: application_linux
+      service:
+        annotations:
+          service.beta.kubernetes.io/azure-load-balancer-internal: "true"
+        externalTrafficPolicy: Local
+        type: LoadBalancer
