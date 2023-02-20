@@ -17,9 +17,6 @@ spec:
   interval: 5m0s
   values:
     controller:
-      nodeSelector:
-        kubernetes.io/os: linux
-        workload_type: application_linux
       service:
         annotations:
           service.beta.kubernetes.io/azure-load-balancer-internal: "true"
