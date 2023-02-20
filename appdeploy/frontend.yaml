@@ -40,7 +40,7 @@ metadata:
   name: azure-vote-front
   namespace: demoapp
 spec:
-  type: LoadBalancer
+  type: ClusterIP
   ports:
   - port: 80
   selector:

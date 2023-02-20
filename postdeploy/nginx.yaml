@@ -4,10 +4,10 @@ metadata:
   name: sample-ingress
   namespace: demoapp
 spec:
-  tls:
-  - hosts:
-      - app.gitopsvote.com
-    secretName: appsecret
+  # tls:
+  # - hosts:
+  #     - app.gitopsvote.com
+  #   secretName: appgitopsvotesecret
   rules:
   - host: app.gitopsvote.com
     http:
