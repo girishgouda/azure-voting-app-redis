@@ -1,27 +1,19 @@
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
-  name: nginx
+  name: nginx-ingress
   namespace: demoapp
 spec:
-  targetNamespace: demoapp
-  releaseName: nginx-ingress-controller
+  releaseName: nginx-ingress
   chart:
     spec:
-      chart: nginx-ingress-controller
+      chart: ingress-nginx
       sourceRef:
         kind: HelmRepository
-        name: nginx
+        name: ingress-nginx
         namespace: demoapp
-      version: "9.x"
+      version: "3.23.0"
   interval: 1h0m0s
   install:
     remediation:
       retries: 3
-  # Default values
-  # https://github.com/bitnami/charts/blob/master/bitnami/nginx-ingress-controller/values.yaml
-  values:
-    service:
-      type: LoadBalancer
-    ingressClassResource:
-      name: nginx
