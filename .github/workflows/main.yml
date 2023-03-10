@@ -21,5 +21,5 @@ jobs:
 
       - name: Build and push image
         run: |
-          docker build . -t crk8sclusterdaqoxfzsym2vq.azurecr.io/voteapp:1.0.0
+          docker build -t crk8sclusterdaqoxfzsym2vq.azurecr.io/voteapp:1.0.0 -f app/Dockerfile .
           docker push crk8sclusterdaqoxfzsym2vq.azurecr.io/voteapp:1.0.0
