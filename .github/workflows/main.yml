@@ -1,1 +1,24 @@
 
+name: Build and deploy
+on:
+  push:
+    branches:
+      - main
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Login to Azure Container Registry
+        uses: azure/docker-login@v1
+        with:
+          login-server: crk8sclusterdaqoxfzsym2vq.azurecr.io
+          username: ${{ secrets.REGISTRY_USERNAME }}
+          password: ${{ secrets.REGISTRY_PASSWORD }}
+
+      - name: Build and push image
+        run: |
+          docker build . -t crk8sclusterdaqoxfzsym2vq.azurecr.io/voteapp:1.0.0
+          docker push crk8sclusterdaqoxfzsym2vq.azurecr.io/voteapp:1.0.0
